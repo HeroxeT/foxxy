@@ -1,0 +1,516 @@
+:root{
+    --menuC: 5;
+}
+.main_profile{
+    width: 93vw;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+.ProfileAvatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 9px;
+    background-color: var(--grayBack);
+    box-sizing: border-box;
+    box-shadow: 0 4px 4px 0 #00000040;
+    border: 1px solid var(--blackBack);
+}
+.left__profile__block{
+    display: flex;
+    height: calc(100vh - 60px);
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.ProfileListMenu{
+    position: relative;
+    z-index: 10;
+    margin-left: 20px;
+    background-color: var(--blackBack);
+    height: calc(100% - 170px);
+    width: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+}
+.profileListArrow{
+    width: 0;
+    height: 0;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    right: -15px;
+    transition: 0.1s;
+    border-radius: 4px;
+    border: 20px solid transparent;
+    border-bottom-color: var(--blackBack);
+    border-right-color: var(--blackBack);
+    transform: rotate(-45deg);
+}
+.profileListList{
+    width: 58px;
+    list-style: none;
+    border-radius: 9px;
+    background-color: var(--grayBack);
+    height: calc(100% - 8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.profileListItem{
+    cursor: pointer;
+    width: 35px;
+    height: calc((100% - 1px*var(--menuC) - 200px)/var(--menuC));
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../images/games/lol_l.png");
+}
+.lol{
+    background-image: url("../images/games/lol_l.png");
+}
+.dota{
+    background-image: url("../images/games/dota_l.png");
+}
+.csgo{
+    background-image: url("../images/games/cs_l.png");
+}
+.profileListItem_line{
+    height: 1px;
+    width: 50px;
+    background-color: var(--blackBack);
+}
+.right__profile__block{
+    width: calc(100% - 200px);
+    height: 100vh;
+}
+.profile_bar{
+    margin-top: 30px;
+}
+.profile__name__back{
+    width: 402px;
+    height: 42px;
+    border-radius: 3px;
+    background-color: var(--blackBack);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile__name{
+    width: 396px;
+    height: 36px;
+    border-radius: 3px;
+    background-color: var(--grayBack);
+}
+.ProfileMainEvent{
+    width: calc(100% - 50px);
+    min-width: 950px;
+    min-height: 550px;
+    margin-top: 40px;
+    height: calc(100% - 142px);
+    border-radius: 10px;
+    background-color: var(--blackBack);
+}
+.ProfileScreen{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left_league{
+    width: 78%;
+    height: calc(100% - 8px);
+    margin-left: 4px;
+    background-color: var(--grayBack);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    max-height: 900px;
+    align-self: flex-start;
+    margin-top: 4px;
+}
+.right_league{
+    width: 21%;
+    height: calc(100% - 8px);
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.playerLeagueInfo{
+    background-color: var(--grayBack);
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    height: 72%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.playerLeagueRoles{
+    background-color: var(--grayBack);
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    height: 27%;
+}
+.avatar_and_nick_lol{
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-start;
+}
+.league_rank_img{
+    margin-top: 20px;
+    position: relative;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.league_rank_loader{
+    position: absolute;
+    top: 0px;
+    display: none;
+    left: calc(50% - 50px);
+}
+.avatar_lol{
+    width: 60px;
+    height: 60px;
+    border-radius: 3px;
+    background-color: var(--blackBack);
+    background-position: center;
+    background-size: contain;
+}
+.avatar_lol_text{
+    margin-left: 10px;
+}
+.avatar_lol_nick{
+    color: var(--text2);
+    font-size: 21px;
+    line-height: 30px;
+}
+.avatar_lol_text{
+    color: var(--text2);
+    font-size: 13px;
+}
+.league_rank_buttons{
+    width: 90%;
+}
+.league_buttons{
+    margin-top: 20px;
+    position: relative;
+    list-style: none;
+    width: 100%;
+    min-width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_league{
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    width: 50%;
+    min-width: 90px;
+    height: 35px;
+    border: 1px solid var(--grayBack);
+    line-height: 35px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.buttonsBackground{
+    position: absolute;
+    left: 0;
+    transition: 0.1s;
+    top: 0;
+    width: 50%;
+    height: 35px;
+    background-color: var(--blackBack);
+    z-index: 5;
+}
+.league_rank_list{
+    width: 90%;
+    list-style: none;
+}
+.avaLoadLeague{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.league_rank_list_item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.league_rank_name{
+    font-size: 25px;
+    color: var(--text2);
+    font-weight: bold;
+}
+.league_rank_games{
+    display: flex;
+    color: var(--text2);
+    font-size: 19px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+.rank_green{
+    color: var(--green) !important;
+    margin-right: 10px;
+}
+.rank_red{
+    color: var(--red) !important;
+    margin-left: 10px;
+}
+.left_top_block_league{
+    width: calc(100% - 60px);
+    height: 40px;
+    background-color: var(--blackBack);
+}
+.gamesLeagueList{
+    width: calc(100% - 59px);
+    height: calc(100% - 100px);
+    list-style: none;
+    overflow-y: auto;
+}
+.gamesLeague_item{
+    height:120px;
+    width: calc(100% - 40px);
+    border-radius: 60px 9px 9px 60px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--blackBack);
+    min-width: 980px;
+}
+.gamesLeague_item_loading{
+    height:120px;
+    width: calc(100% - 40px);
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+}
+.gamesLeague_info{
+    display: flex;
+    align-items: center;
+}
+.game_pers_avatar_lol{
+    width: 100px;
+    height: 100px;
+    background-color: var(--blackBack);
+    margin-left: 10px;
+    border-radius: 100%;
+    background-image: url("../test img/Aatrox.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+.game_win{
+    border: 4px solid var(--green);
+}
+.game_lost{
+    border: 4px solid var(--red);
+}
+.game_lol_text{
+    margin-left: 30px;
+}
+.game_lol_winnable{
+    margin: 0;
+    font-weight: bold;
+}
+.game_lol_text > *{
+    color: var(--text2);
+    font-size: 18px;
+    line-height: 30px;
+}
+.forBig{
+    font-size: 25px;
+}
+.game_lol_items{
+    background-color: var(--grayBack);
+    height: 60px;
+    width: 350px;
+    border-radius: 6px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.game_lol_items_stat{
+    margin-left: 30px;
+}
+.game_lol_items_item{
+    width: 40px;
+    height: 40px;
+    background-image: url("../test img/file.png");
+    background-size: cover;
+    background-position: center;
+    background-color: var(--blackBack);
+    background-repeat: no-repeat;
+    border-radius: 3px;
+}
+.game_lol_items_item_low{
+    width: 30px;
+    height: 30px;
+    background-color: var(--blackBack);
+    background-image: url("../test img/file.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    margin-top: -10px;
+}
+.game_lol_stats{
+    height: 30px;
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    color: var(--text2);
+    font-size: 14px;
+}
+.game_lol_stats_kda{
+    font-size: 18px;
+    font-weight: bold;
+}
+.game_lol_stats_summonersSpells{
+    height: 30px;
+    background-color: var(--grayBack);
+    width: 90px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
+    border-radius: 15px 5px 5px 15px;
+}
+.game_lol_stats_summonersSpells>*{
+    height: 24px;
+    width: 24px;
+    border-radius: 2px;
+    background-color: var(--blackBack);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.game_lol_summ_perk{
+    background-color: transparent;
+    background-image: url("../test img/8008.png");
+}
+.game_lol_summ_spell1{
+    background-image: url("../test img/SummonerBarrier.png");
+}
+.game_lol_summ_spell2{
+    background-image: url("../test img/SummonerFlash.png");
+}
+.game_lol_allPersons{
+    width: 240px;
+    height: 100px;
+    display: flex;
+    background-color: var(--grayBack);
+    list-style: none;
+    border-radius: 8px;
+    margin-right: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+}
+.game_lol_allPersons_item{
+    height: 40px;
+    margin: 4px;
+    width: 40px;
+    border-radius: 5px;
+    background-color: var(--blackBack);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888*/
+
+
+.gamesLeagueList {
+    scrollbar-width: thin;
+    scrollbar-color:  var(--blackBack)  var(--grayBack);
+}
+
+.gamesLeagueList::-webkit-scrollbar {
+    position: absolute;
+    right: 12px;
+    width: 12px;
+}
+
+.gamesLeagueList::-webkit-scrollbar-track {
+    background:  var(--grayBack);
+
+}
+
+.gamesLeagueList::-webkit-scrollbar-thumb {
+    background-color:  var(--blackBack);
+    border-radius: 20px;
+    border: 3px solid  var(--grayBack);
+}
+
+
+/**********************************************/
+.ProfileButtons{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.ProfileLeft{
+    width: calc(50% - 20px);
+    margin-left: 20px;
+    height: 100%;
+}
+.ProfileButton{
+    width: 31%;
+    height: 35px;
+    background-color: var(--grayBack);
+    color: var(--text2);
+    font-size: 15px;
+    border-radius: 5px;
+    line-height: 35px;
+    text-align: center;
+    overflow: hidden;
+
+}
+.ProfileButtonMore{
+    position: absolute;
+    right: -45px;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: var(--grayBack);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.PBMdots{
+    margin: 2px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--text2);
+}
+.ProfileInfo{
+    width: 100%;
+    height: 200px;
+    background-color:var(--grayBack);
+    border-radius: 5px 0px 0px 5px;
+    margin-top:20px ;
+}

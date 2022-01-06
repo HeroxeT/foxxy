@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Foxxy</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/canvas.css">
+    <link rel="stylesheet" href="assets/css/registration.css">
+    <link rel="stylesheet" href="assets/css/message.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link type="image/png" sizes="120x120" rel="icon" href="assets/images/favicon.png">
+</head>
+<body>
+<!-- экран авторизации -->
+<section class="loginScreen noneVis">
+    <!-- логотип -->
+    <div class="logoLogin"></div>
+    <!-- экран с формами -->
+    <div class="flightAuthScreen">
+        <div class="authorizationScreen">
+            <!-- Регистрация -->
+            <div class="registrationForm">
+                <div class="titleAuth">Регистрация</div>
+                <div><label>
+                    <div class="textForInputs">Логин</div>
+                    <input class="inputsForLogin" type="text" name="loginForReg"></label></div>
+                <div><label>
+                    <div class="textForInputs">Почта</div>
+                    <input class="inputsForLogin" type="email" name="emailForReg"></label></div>
+                <div><label>
+                    <div class="textForInputs">Пароль</div>
+                    <input class="inputsForLogin" type="password" name="passwordForReg"></label></div>
+                <div><label>
+                    <div class="textForInputs">Подтвердите пароль</div>
+                    <input class="inputsForLogin" type="password" name="passwordForRegSec"></label></div>
+                <div class="buttonsForFormRegister">
+                    <button class="AuthButton">Зарегистроваться</button>
+                    <button class="AuthButton" id="toAuthScreen">Авторизация</button>
+                </div>
+            </div>
+            <!-- Авторизация -->
+            <div class="authorizationForm noneVis">
+                <div class="titleAuth">Авторизация</div>
+                <div><label>
+                    <div class="textForInputs">Логин</div>
+                    <input class="inputsForLogin" type="text" name="loginForAuth"></label></div>
+                <div><label>
+                    <div class="textForInputs">Пароль</div>
+                    <input class="inputsForLogin" type="password" name="passwordForAuth"></label></div>
+                <div class="buttonsForFormAuth">
+                    <button class="AuthButton" id="loginInSus">Войти</button>
+                    <button class="AuthButton" id="toRegScreen">Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- весь фон -->
+    <div class="blackBackground"></div>
+    <div id="particles-js"></div>
+    <video class="videoBackground" autoplay="autoplay" muted src="assets/video/loginscreen.mp4" loop></video>
+</section>
+<section class="mainLoading">
+    <div class="loader loader--style1">
+        <svg version="1.1" id="L7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+             y="0px" width="400px" height="400px"
+             viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+ <path fill="#fff" d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3
+  c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z">
+      <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="2s"
+              from="0 50 50"
+              to="360 50 50"
+              repeatCount="indefinite"/>
+  </path>
+            <path fill="#fff" d="M42.3,39.6c5.7-4.3,13.9-3.1,18.1,2.7c4.3,5.7,3.1,13.9-2.7,18.1l4.1,5.5c8.8-6.5,10.6-19,4.1-27.7
+  c-6.5-8.8-19-10.6-27.7-4.1L42.3,39.6z">
+      <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="1s"
+              from="0 50 50"
+              to="-360 50 50"
+              repeatCount="indefinite"/>
+  </path>
+            <path fill="#fff" d="M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5
+  L82,35.7z">
+      <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="2s"
+              from="0 50 50"
+              to="360 50 50"
+              repeatCount="indefinite"/>
+  </path>
+</svg>
+    </div>
+    <div class="TextLoading">Foxxy Inc.</div>
+</section>
+<section class="mainScreen noneVis">
+    <div class="left_panel">
+        <div class="logo"></div>
+        <ul class="nav_menu">
+            <li class="nav_item user"></li>
+            <li class="nav_item chat"></li>
+            <li class="nav_item friends"></li>
+            <li class="nav_item settings"></li>
+            <!--                <li class="nav_item"></li>-->
+            <!--                <li class="nav_item"></li>-->
+            <li class="nav_item background_gray" id="nav_item_back"></li>
+        </ul>
+    </div>
+    <div class="main_profile" id="user">
+        <div class="left__profile__block">
+            <div class="ProfileAvatar"></div>
+            <div class="ProfileListMenu">
+                <ul class="profileListList">
+                    <li class="profileListItem_line"></li>
+                    <li class="profileListItem prof"></li>
+                    <li class="profileListItem_line"></li>
+                    <li class="profileListItem lol"></li>
+                    <li class="profileListItem_line"></li>
+                    <li class="profileListItem dota"></li>
+                    <li class="profileListItem_line"></li>
+                    <li class="profileListItem csgo"></li>
+                    <li class="profileListItem_line"></li>
+                </ul>
+                <div class="profileListArrow"></div>
+            </div>
+        </div>
+        <div class="right__profile__block">
+            <div class="profile_bar">
+                <div class="profile__name__back">
+                    <div class="profile__name"></div>
+                </div>
+            </div>
+            <div class="ProfileMainEvent">
+                <div class="ProfileScreen" id="prof">
+                    <div class="ProfileLeft">
+                        <div class="ProfileButtons">
+                            <div class="ProfileButton">Добавить в друзья</div>
+                            <div class="ProfileButton">Написать сообщение</div>
+                            <div class="ProfileButton">Добавить в черный список</div>
+                            <div class="ProfileButtonMore">
+                                <div class="PBMdots"></div>
+                                <div class="PBMdots"></div>
+                                <div class="PBMdots"></div>
+                            </div>
+                        </div>
+                        <div class="ProfileInfo">
+
+                        </div>
+                        <div class=""></div>
+                    </div>
+                    <div class="ProfileRight"></div>
+                </div>
+                <!-- TODO сделать монотонный шрифт чтобы текст не плавал -->
+                <div class="ProfileScreen" id="lol">
+                    <div class="left_league">
+                        <div class="left_top_block_league"></div>
+                        <ul class="gamesLeagueList">
+
+                        </ul>
+                    </div>
+                    <div class="right_league">
+                        <div class="playerLeagueInfo">
+                            <div class="avatar_and_nick_lol">
+                                <div class="avatar_lol">
+                                    <div class="avaLoadLeague">
+                                        <svg version="1.1" id="L7" xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                             y="0px" width="40px" height="60px"
+                                             viewBox="0 0 100 100" enable-background="new 0 0 100 100"
+                                             xml:space="preserve">
+ <path fill="#fff" d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3
+  c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z">
+      <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="2s"
+              from="0 50 50"
+              to="360 50 50"
+              repeatCount="indefinite"/>
+  </path>
+                                            <path fill="#fff" d="M42.3,39.6c5.7-4.3,13.9-3.1,18.1,2.7c4.3,5.7,3.1,13.9-2.7,18.1l4.1,5.5c8.8-6.5,10.6-19,4.1-27.7
+  c-6.5-8.8-19-10.6-27.7-4.1L42.3,39.6z">
+      <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="1s"
+              from="0 50 50"
+              to="-360 50 50"
+              repeatCount="indefinite"/>
+  </path>
+                                            <path fill="#fff" d="M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5
+  L82,35.7z">
+      <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="2s"
+              from="0 50 50"
+              to="360 50 50"
+              repeatCount="indefinite"/>
+  </path>
+</svg>
+                                    </div>
+                                </div>
+                                <div class="avatar_lol_text">
+                                    <div class="avatar_lol_nick">Sad1Senpa1</div>
+                                    <div class="avatar_lol_level">56 уровень</div>
+                                </div>
+                            </div>
+                            <div class="league_rank_buttons">
+                                <ul class="league_buttons">
+                                    <li class="button_league solo">Одиночная</li>
+                                    <li class="button_league flex">Гибкая</li>
+                                    <li class="buttonsBackground"></li>
+                                </ul>
+                            </div>
+                            <ul class="league_rank_list">
+                                <li class="league_rank_list_item">
+                                    <div class="league_rank_img solo">
+                                        <div class="league_rank_loader solo">
+                                            <svg version="1.1" id="L7" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                                 y="0px" width="100px" height="300px"
+                                                 viewBox="0 0 100 100" enable-background="new 0 0 100 100"
+                                                 xml:space="preserve">
+ <path fill="#fff" d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3
+  c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z">
+      <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="2s"
+              from="0 50 50"
+              to="360 50 50"
+              repeatCount="indefinite"/>
+  </path>
+                                                <path fill="#fff" d="M42.3,39.6c5.7-4.3,13.9-3.1,18.1,2.7c4.3,5.7,3.1,13.9-2.7,18.1l4.1,5.5c8.8-6.5,10.6-19,4.1-27.7
+  c-6.5-8.8-19-10.6-27.7-4.1L42.3,39.6z">
+      <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="1s"
+              from="0 50 50"
+              to="-360 50 50"
+              repeatCount="indefinite"/>
+  </path>
+                                                <path fill="#fff" d="M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5
+  L82,35.7z">
+      <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="2s"
+              from="0 50 50"
+              to="360 50 50"
+              repeatCount="indefinite"/>
+  </path>
+</svg>
+                                        </div>
+                                        <img style="opacity: 0" src="assets/images/League/Emblem_Bronze.png"
+                                             alt="emblem" width="100%">
+                                    </div>
+                                    <div class="league_rank_name solo">Silver II</div>
+                                    <div class="league_rank_games solo">
+                                        <div class="rank_green">100</div>
+                                        |
+                                        <div class="rank_red">50</div>
+                                    </div>
+                                </li>
+                                <li class="league_rank_list_item" style="display: none">
+                                    <div class="league_rank_img flex">
+                                        <div class="league_rank_loader flex">
+                                            <svg version="1.1" id="L7" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                                 y="0px" width="100px" height="300px"
+                                                 viewBox="0 0 100 100" enable-background="new 0 0 100 100"
+                                                 xml:space="preserve">
+ <path fill="#fff" d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3
+  c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z">
+      <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="2s"
+              from="0 50 50"
+              to="360 50 50"
+              repeatCount="indefinite"/>
+  </path>
+                                                <path fill="#fff" d="M42.3,39.6c5.7-4.3,13.9-3.1,18.1,2.7c4.3,5.7,3.1,13.9-2.7,18.1l4.1,5.5c8.8-6.5,10.6-19,4.1-27.7
+  c-6.5-8.8-19-10.6-27.7-4.1L42.3,39.6z">
+      <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="1s"
+              from="0 50 50"
+              to="-360 50 50"
+              repeatCount="indefinite"/>
+  </path>
+                                                <path fill="#fff" d="M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5
+  L82,35.7z">
+      <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="2s"
+              from="0 50 50"
+              to="360 50 50"
+              repeatCount="indefinite"/>
+  </path>
+</svg>
+                                        </div>
+                                        <img style="opacity: 0" src="assets/images/League/Emblem_Bronze.png"
+                                             alt="emblem" width="100%">
+                                    </div>
+                                    <div class="league_rank_name flex">Bronze III</div>
+                                    <div class="league_rank_games flex">
+                                        <div class="rank_green">20</div>
+                                        |
+                                        <div class="rank_red">60</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="playerLeagueRoles">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="ProfileScreen" id="dota">dota</div>
+                <div class="ProfileScreen" id="cs">cs</div>
+            </div>
+        </div>
+    </div>
+    <div class="main_content" id="chat">
+        <div class="MessagesEvent">
+            <div class="left__Panel">
+                <ul class="messageDialogs-list">
+                    <li class="messageDialogs-item-line"></li>
+                    <li class="messageDialogs-item">
+                        <div class="avatar-50 darkA"></div>
+                        <div class="Person">
+                            <div class="PersonName">Тест</div>
+                            <div class="PersonStatus"></div>
+                        </div>
+                    </li>
+                    <li class="messageDialogs-item-line"></li>
+                    <li class="messageDialogs-item">
+                        <div class="avatar-50 darkA"></div>
+                        <div class="Person">
+                            <div class="PersonName">Тест</div>
+                            <div class="PersonStatus">Тестовый статус</div>
+                        </div>
+                    </li>
+                    <li class="messageDialogs-item-line"></li>
+                    <li class="messageDialogs-item">
+                        <div class="avatar-50 darkA"></div>
+                        <div class="Person">
+                            <div class="PersonName">Тест</div>
+                            <div class="PersonStatus"></div>
+                        </div>
+                    </li>
+                    <li class="messageDialogs-item-line"></li>
+                    <li class="messageDialogs-item">
+                        <div class="avatar-50 darkA"></div>
+                        <div class="Person">
+                            <div class="PersonName">Тест</div>
+                            <div class="PersonStatus"></div>
+                        </div>
+                    </li>
+                    <li class="messageDialogs-item-line"></li>
+                </ul>
+            </div>
+            <div class="Content__Panel">
+                <div class="top_header">
+                    <div class=""></div>
+                </div>
+                <div class="currentDialog">
+                    <div class="left_line"></div>
+                    <div class="currentDialogMessages">
+                        <div class="currentDialogInfo">
+                            <div class="AvatarDialog"></div>
+                            <div class="NameDialog"></div>
+                        </div>
+                        <div class="dialog">
+                            <ul class="MessagesList">
+                                <li class="messageItem messageFrom firstMessage">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Consectetur distinctio doloribus illo magnam molestiae nemo optio perspiciatis
+                                        quasi, quibusdam sunt.
+                                        <div class="Timemessage">15:00/20.02</div>
+                                    </div>
+
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">15:10/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet.
+                                        <div class="Timemessage">19:00/20.02</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageTo firstMessage">
+                                    <div class="avatar-50 avaMessage dark2A "></div>
+                                    <div class="messageBlock">Lorem
+                                        <div class="Timemessage">12:00</div>
+                                    </div>
+                                </li>
+                                <li class="messageItem messageFrom firstMessage">
+                                    <div class="avatar-50 avaMessage dark2A"></div>
+                                    <div class="messageBlock"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Excepturi nulla, reiciendis. Amet animi aperiam aut cupiditate delectus deserunt
+                                        dignissimos dolorem doloribus enim esse excepturi explicabo facere facilis fugit
+                                        ipsam itaque libero maxime minima modi natus, neque nisi nobis obcaecati
+                                        officiis
+                                        pariatur possimus quam qui quibusdam rem repudiandae saepe soluta unde ut vel
+                                        voluptate voluptatibus voluptatum! Alias laudantium perferendis repellat?
+                                        <div class="Timemessage">14:12</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main_profile" id="friends"></div>
+    <div class="main_profile" id="settings"></div>
+</section>
+<script src="assets/JavaScript/particleJs.js"></script>
+<script src="assets/JavaScript/stats.js"></script>
+<script src="assets/JavaScript/canvas.js"></script>
+<script src="assets/JavaScript/perms.js"></script>
+<script src="assets/JavaScript/registration.js"></script>
+<script src="assets/JavaScript/animations.js"></script>
+<script src="assets/JavaScript/message.js"></script>
+<script src="assets/JavaScript/profile.js"></script>
+<script src="assets/JavaScript/Lol.js"></script>
+
+
+</body>
+</html>

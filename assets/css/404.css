@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color:#FF7F49;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+.round:first-child{
+    width: 150px;
+    height: 150px;
+    transform-origin: center;
+    animation: krytoten6 20s infinite;
+}
+.round{
+    width: 150px;
+    height: 150px;
+    transform-origin: center;
+    animation: krytoten6 20s infinite reverse;
+}
+h1{
+    line-height: 75px;
+    color: white !important;
+    width: 1000px;
+    text-align: center;
+    font-size: 32px;
+}
+span{
+    font-size: 40px;
+}
+a{
+    color: white;
+    font-size: 38px;
+}
+
+@keyframes krytoten6{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(10turn);
+    }
+}

@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: MontserratR;
+}
+:root {
+    --text: #ffe4e1;
+    --text2: #888888;
+    --orBack: #FF7F49;
+    --or: #FF7518;
+    --blackBack: #1C1C24;
+    --grayBack: #2D2D39;
+    --red: #660000;
+    --green: #006600;
+}
+body {
+    overflow: hidden;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+}
+
+svg, svg rect {
+    fill: var(--orBack);
+
+}
+
+path {
+    fill: var(--orBack);
+}
+
+.mainLoading {
+    background-color: var(--grayBack);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loader--style1 {
+    margin-top: -100px;
+}
+
+.TextLoading {
+    font-family: MontserratB;
+    font-size: 40px;
+    color: var(--orBack);
+}
+
+.mainScreen {
+    background-color: var(--orBack);
+    display: flex;
+    justify-content: space-around;
+    color: var(--text);
+}
+
+.left_panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 2px;
+    width: 0;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+    height: calc(100vh - 4px);
+}
+
+.noneVis {
+    display: none !important;
+}
+
+.logo {
+    margin-top: 20px;
+    margin-right: 10px;
+    width: 70px;
+    height: 70px;
+    background-image: url("../images/logo.png");
+    background-size: cover;
+
+}
+
+.nav_item {
+    z-index: 100;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 15px 5px;
+    list-style: none;
+    background-size: 20px 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.user {
+    background-image: url("../images/menuAssets/user.png");
+}
+.chat {
+    background-image: url("../images/menuAssets/chat.png");
+}
+
+.settings {
+    background-image: url("../images/menuAssets/settings.png");
+}
+
+.friends {
+    background-image: url("../images/menuAssets/friends.png");
+}
+.background_gray {
+    z-index: 10;
+    top: -165px;
+    border-radius: 8px;
+    transition: 0.3s;
+    background-color: #b7410e;
+}
+.main_content {
+    border-radius: 0 0 0 0;
+    transition: 0.3s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--blackBack);
+}
+
+@font-face {
+    font-family: "MontserratR";
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: "MontserratB";
+    src: url("../fonts/Montserrat-Black.ttf");
+}
+
+
+@keyframes xd {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,136 @@
+.authorizationScreen{
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgba(53,53,69, 1);
+    transition-timing-function: cubic-bezier(.27,-0.51,.73,.18);
+}
+.flightAuthScreen{
+    z-index: 3;
+    min-width: 370px;
+    width: 23%;
+    position: absolute;
+    left: -1000px;
+    transition: 0.2s;
+}
+.authorizationForm>div>label{
+    position: relative;
+    display: block;
+    height: 50px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.authorizationForm{
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    min-height: 300px;
+    transition: 0.2s;
+}
+.registrationForm>div>label{
+    position: relative;
+    display: block;
+    margin-top: 40px;
+    height: 50px;
+    overflow: hidden;
+
+}
+.buttonsForFormAuth > .AuthButton{
+    width: 175px;
+}
+.textForInputs{
+    position: absolute;
+    z-index: 100;
+    top: 20px;
+    left: calc(50% - 140px);
+    transition: 0.3s;
+}
+.registrationForm{
+    display: flex;
+    opacity: 1;
+    transition: 0.2s;
+    flex-direction: column;
+    min-height: 600px;
+    box-sizing: border-box;
+}
+
+.inputsForLogin{
+    outline: none;
+    color: var(--text);
+    position: absolute;
+    font-family: MontserratR;
+    top: 0;
+    padding-left: 10px;
+    z-index: 10;
+    left: calc(50% - 150px);
+    width: 300px;
+    height: 50px;
+    border: 0;
+    border-bottom: 1px solid #FF7F49;
+    box-sizing: border-box;
+    background-color: rgba(28,28, 36, 1);
+}
+.buttonsForFormRegister{
+    width: 300px;
+    margin: auto;
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+.buttonsForFormAuth{
+    width: 360px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.titleAuth{
+    font-weight: 900;
+    font-size: 24px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.AuthButton{
+    cursor: pointer;
+    width: 146px;
+    margin: 0;
+    border: 0;
+    border-radius: 4px;
+    border-top: 1px solid #FF7F49;
+    border-bottom: 1px solid #FF7F49;
+    color: var(--text);
+    background-color: rgba(28,28, 36, 1);
+    height: 40px;
+}
+
+.logoLogin{
+    z-index: 3;
+    position: absolute;
+    left: -500px;
+    top: 20px;
+    transition: 0.4s;
+    background-image: url("../images/logo_s_textom_1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 170px;
+}
+.loginScreen{
+    background-color:#FF7F49;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blackBackground{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    top: 0;
+    background-color: rgba(0,0,0,0.3);
+}
+.videoBackground{
+    height: 100vh;
+    width: auto;
+}
